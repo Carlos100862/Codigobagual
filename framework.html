@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+    <title>Desenvolvimento Web: Frontend e Backend</title>
+    <style>
+        body {
+            background-image: url("pg.jpeg");
+            text-align: center;
+            padding: 20px;
+            color: white; 
+        }
+        .technology-card {
+            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desenvolvimento Web: Frontend e Backend</h1>
+    
+    <div class="container">
+        <div class="technology-card">
+            <h2>1. Frontend</h2>
+            <p><strong>Descrição:</strong> Lida com a interface do usuário e a interação visual do lado do cliente.</p>
+            <p><strong>Principais Tecnologias:</strong> JavaScript, TypeScript, HTML, CSS.</p>
+            <p><strong>Frameworks:</strong> React, Angular, Vue.js, Svelte, Bootstrap, Tailwind CSS.</p>
+        </div>
+
+        <div class="technology-card">
+            <h2>2. Backend</h2>
+            <p><strong>Descrição:</strong> Lida com a lógica de negócios, gerenciamento de banco de dados e comunicações entre servidores e clientes.</p>
+            <p><strong>Principais Tecnologias:</strong> JavaScript (Node.js), Python, Java, Ruby, PHP, C#, Go, Rust.</p>
+            <p><strong>Frameworks:</strong> Express.js, Django, Spring Boot, Ruby on Rails, Laravel.</p>
+        </div>
+
+        <button class="btn btn-primary" onclick="solicitarNome()">Saudar</button>
+        <button class="btn btn-danger" onclick="saida()">Sair</button>
+        <button class="btn btn-success" onclick="startQuiz()">Iniciar Quiz</button>
+        <a href="index.html" class="btn btn-info">Voltar</a>
+    </div>
+
+    <script>
+        function saudacao() {
+            alert("♣ Bem-vindo ao site sobre Desenvolvimento Web!! ♥");
+        }
+
+        function solicitarNome() {
+            var nome = prompt("Qual é o seu nome?");
+            if (nome != null && nome !== "") {
+                alert("Olá, " + nome + "!");
+            } else {
+                alert("Você não inseriu seu nome.");
+            }
+        }
+
+        function saida() {
+            alert("♣ Muito obrigado por visitar nosso site sobre Desenvolvimento Web!! ♥");
+        }
+
+        function startQuiz() {
+            var questions = [
+                {
+                    question: "Qual é a linguagem dominante para desenvolvimento frontend?",
+                    answer: "JavaScript"
+                },
+                {
+                    question: "Qual framework é mantido pelo Facebook para construir interfaces?",
+                    answer: "React"
+                },
+                {
+                    question: "Qual linguagem é um superset do JavaScript que adiciona tipagem estática?",
+                    answer: "TypeScript"
+                },
+                {
+                    question: "Qual framework é conhecido por seu uso em aplicativos robustos e escaláveis em Java?",
+                    answer: "Spring Boot"
+                },
+                {
+                    question: "Qual é um framework PHP moderno e expressivo?",
+                    answer: "Laravel"
+                }
+            ];
+
+            for (var i = 0; i < questions.length; i++) {
+                var userAnswer = prompt(questions[i].question);
+                if (userAnswer != null && userAnswer.trim() !== "") {
+                    if (userAnswer.toLowerCase() === questions[i].answer.toLowerCase()) {
+                        alert("Correto!");
+                    } else {
+                        alert("Errado! A resposta correta é: " + questions[i].answer);
+                    }
+                } else {
+                    alert("Você não inseriu sua resposta.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
